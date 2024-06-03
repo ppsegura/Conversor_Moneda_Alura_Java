@@ -1,5 +1,10 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+    Scanner sc = new Scanner(System.in);
+    CurrencyConverter cur = new CurrencyConverter();
+        System.out.println("Indique la moneda base para convertir :");
     }
 }
