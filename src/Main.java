@@ -12,7 +12,7 @@ public class Main {
         PairConversion pairConversion;
 
         while (selector != 8) {
-            printMenu();
+            converter.printMenu();
             selector = sc.nextInt();
 
             if (selector >= 1 && selector <= 6) {
@@ -42,22 +42,6 @@ public class Main {
             }
         }
         sc.close();
-    }
-
-    private static void printMenu() {
-        System.out.println("""
-                ********************************************
-                Sea bienvenido/a al conversor de moneda\n
-                1) Dólar ==> Peso argentino
-                2) Peso argentino ==> Dólar
-                3) Dólar ==> Real Brasileño
-                4) Real brasileño ==> Dólar
-                5) Dólar ==> Peso colombiano
-                6) Peso colombiano ==> Dólar
-                7) Convierta otro tipo de monedas
-                8) Salir
-                ********************************************
-            """);
     }
 
     private static String getConversionPair(int selector) {
