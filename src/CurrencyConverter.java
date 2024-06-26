@@ -1,11 +1,11 @@
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Scanner;
 
 public class CurrencyConverter {
 
@@ -27,4 +27,22 @@ public class CurrencyConverter {
             throw new RuntimeException(e);
         }
     }
+    public String getCurrency(Scanner scanner, String prompt) {
+        System.out.println(prompt);
+        String numberChar = scanner.next();
+        while (numberChar.length() > 3) {
+            System.out.println("Error: La entrada debe tener como máximo 3 caracteres.");
+            System.out.println(prompt);
+            numberChar = scanner.next();
+        }
+        return numberChar.toUpperCase();
+    }
+
+    public String getMessage(double amount, String source, double result, String target) {
+        String message = """
+                El valor %.2f [%s] corresponde al valor final de ==> %.2f [%s]
+                """.formatted(amount, source, result,target);
+        return message;
+    }
+
 }
